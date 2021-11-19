@@ -1,6 +1,7 @@
 # ByteTrack-ONNX-Sample
 [ByteTrack(Multi-Object Tracking by Associating Every Detection Box)](https://github.com/ifzhang/ByteTrack)のPythonでのONNX推論サンプルです。<br>
-ONNXに変換したモデルも同梱しています。変換自体を試したい方は[ByteTrack_Convert2ONNX.ipynb](ByteTrack_Convert2ONNX.ipynb)を使用ください。<br>
+ONNXに変換したモデルも同梱しています。<br>
+変換自体を試したい方は[ByteTrack_Convert2ONNX.ipynb](ByteTrack_Convert2ONNX.ipynb)を使用ください。<br>
 [ByteTrack_Convert2ONNX.ipynb](ByteTrack_Convert2ONNX.ipynb)はColaboratory上での実行を想定しています。
 
 <!-- 動画が小さい -->
