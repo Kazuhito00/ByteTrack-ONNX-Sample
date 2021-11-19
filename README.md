@@ -27,7 +27,7 @@ cython_bbox 0.1.3 or later<br>
 
 # Demo
 デモの実行方法は以下です。
-#### 動画
+#### 動画：動画に対しByteTrackで追跡した結果を動画出力します
 ```bash
 python demo_video_onnx.py
 ```
@@ -75,7 +75,7 @@ MOT20を使用しているか否か<br>
 デフォルト：指定なし
 </details>
 
-#### Webカメラ
+#### Webカメラ：Webカメラ画像に対しByteTrackで追跡した結果をGUI表示します
 ```bash
 python demo_webcam_onnx.py
 ```
