@@ -79,6 +79,49 @@ MOT20を使用しているか否か<br>
 ```bash
 python demo_webcam_onnx.py
 ```
+<details>
+<summary>実行時オプション</summary>
+
+* --model<br>
+ByteTrackのONNXモデル格納パス<br>
+デフォルト：byte_tracker/model/bytetrack_s.onnx
+* --device<br>
+カメラデバイス番号の指定<br>
+デフォルト：0
+* --width<br>
+カメラキャプチャ時の横幅<br>
+デフォルト：960
+* --height<br>
+カメラキャプチャ時の縦幅<br>
+デフォルト：540
+* --score_th<br>
+人検出のスコア閾値<br>
+デフォルト：0.1
+* --score_th<br>
+人検出のNMS閾値<br>
+デフォルト：0.7
+* --input_shape<br>
+推論時入力サイズ<br>
+デフォルト：608,1088
+* --with_p6<br>
+YOLOXモデルのFPN/PANでp6を含むか否か<br>
+デフォルト：指定なし
+* --track_thresh<br>
+追跡時のスコア閾値<br>
+デフォルト：0.5
+* --track_buffer<br>
+見失い時に何フレームの間、追跡対象を保持するか<br>
+デフォルト：30
+* --match_thresh<br>
+追跡時のマッチングスコア閾値<br>
+デフォルト：0.8
+* --min-box-area<br>
+最小のバウンディングボックスのサイズ閾値<br>
+デフォルト：10
+* --mot20<br>
+MOT20を使用しているか否か<br>
+デフォルト：指定なし
+</details>
 
 # Reference
 * [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack)
