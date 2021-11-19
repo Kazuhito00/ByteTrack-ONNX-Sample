@@ -1,12 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import copy
 
 import numpy as np
 import onnxruntime
 
-from byte_tracker.yolox.data.data_augment import preproc as pre_process
-from byte_tracker.yolox.utils import demo_postprocess as post_process
-from byte_tracker.yolox.utils import multiclass_nms
-from byte_tracker.yolox.tracker.byte_tracker import BYTETracker
+from byte_tracker.utils.yolox_utils import (
+    pre_process,
+    post_process,
+    multiclass_nms,
+)
+from byte_tracker.tracker.byte_tracker import BYTETracker
 
 
 class ByteTrackerONNX(object):

@@ -1,17 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-# Copyright (c) 2014-2021 Megvii Inc. All rights reserved.
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import cv2
 import numpy as np
-
-import os
-
-__all__ = ["mkdir", "nms", "multiclass_nms", "demo_postprocess"]
-
-
-def mkdir(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
 
 
 def nms(boxes, scores, nms_thr):
@@ -60,16 +50,39 @@ def multiclass_nms(boxes, scores, nms_thr, score_thr):
             if len(keep) > 0:
                 cls_inds = np.ones((len(keep), 1)) * cls_ind
                 dets = np.concatenate(
-                    [valid_boxes[keep], valid_scores[keep, None], cls_inds], 1
-                )
+                    [valid_boxes[keep], valid_scores[keep, None], cls_inds], 1)
                 final_dets.append(dets)
     if len(final_dets) == 0:
         return None
     return np.concatenate(final_dets, 0)
 
 
-def demo_postprocess(outputs, img_size, p6=False):
+def pre_process(image, input_size, mean, std, swap=(2, 0, 1)):
+    if len(image.shape) == 3:
+        padded_img = np.ones((input_size[0], input_size[1], 3)) * 114.0
+    else:
+        padded_img = np.ones(input_size) * 114.0
+    img = np.array(image)
+    r = min(input_size[0] / img.shape[0], input_size[1] / img.shape[1])
+    resized_img = cv2.resize(
+        img,
+        (int(img.shape[1] * r), int(img.shape[0] * r)),
+        interpolation=cv2.INTER_LINEAR,
+    ).astype(np.float32)
+    padded_img[:int(img.shape[0] * r), :int(img.shape[1] * r)] = resized_img
 
+    padded_img = padded_img[:, :, ::-1]
+    padded_img /= 255.0
+    if mean is not None:
+        padded_img -= mean
+    if std is not None:
+        padded_img /= std
+    padded_img = padded_img.transpose(swap)
+    padded_img = np.ascontiguousarray(padded_img, dtype=np.float32)
+    return padded_img, r
+
+
+def post_process(outputs, img_size, p6=False):
     grids = []
     expanded_strides = []
 

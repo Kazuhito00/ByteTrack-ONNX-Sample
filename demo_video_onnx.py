@@ -200,7 +200,7 @@ def draw_tracking_info(
         (0, int(15 * text_scale)),
         cv2.FONT_HERSHEY_PLAIN,
         2,
-        (0, 0, 255),
+        (0, 255, 0),
         thickness=text_thickness,
     )
 
