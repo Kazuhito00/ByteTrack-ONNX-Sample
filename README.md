@@ -34,36 +34,46 @@ python demo_video_onnx.py
 <details>
 <summary>実行時オプション</summary>
 
-
-</details>
-
-* --device<br>
-カメラデバイス番号の指定<br>
-デフォルト：0
-* --movie<br>
-動画ファイルの指定 ※指定時はカメラデバイスより優先<br>
+* --use_debug_window<br>
+動画書き込み時に書き込みフレームをGUI表示するか否か<br>
 デフォルト：指定なし
-* --image<br>
-画像ファイルの指定 ※指定時はカメラデバイスや動画より優先<br>
-デフォルト：指定なし
-* --width<br>
-カメラキャプチャ時の横幅<br>
-デフォルト：960
-* --height<br>
-カメラキャプチャ時の縦幅<br>
-デフォルト：540
 * --model<br>
-ロードするモデルの格納パス<br>
-デフォルト：model/nanodet_m_320.onnx
-* --input_shape<br>
-モデルの入力サイズ<br>
-デフォルト：320
+ByteTrackのONNXモデル格納パス<br>
+デフォルト：byte_tracker/model/bytetrack_s.onnx
+* --video<br>
+入力動画の格納パス<br>
+デフォルト：sample.mp4
+* --output_dir<br>
+動画出力パス<br>
+デフォルト：output
 * --score_th<br>
-クラス判別の閾値<br>
-デフォルト：0.35
-* --nms_th<br>
-NMSの閾値<br>
-デフォルト：0.6
+人検出のスコア閾値<br>
+デフォルト：0.1
+* --score_th<br>
+人検出のNMS閾値<br>
+デフォルト：0.7
+* --input_shape<br>
+推論時入力サイズ<br>
+デフォルト：608,1088
+* --with_p6<br>
+YOLOXモデルのFPN/PANでp6を含むか否か<br>
+デフォルト：指定なし
+* --track_thresh<br>
+追跡時のスコア閾値<br>
+デフォルト：0.5
+* --track_buffer<br>
+見失い時に何フレームの間、追跡対象を保持するか<br>
+デフォルト：30
+* --match_thresh<br>
+追跡時のマッチングスコア閾値<br>
+デフォルト：0.8
+* --min-box-area<br>
+最小のバウンディングボックスのサイズ閾値<br>
+デフォルト：10
+* --mot20<br>
+MOT20を使用しているか否か<br>
+デフォルト：指定なし
+</details>
 
 #### Webカメラ
 ```bash
