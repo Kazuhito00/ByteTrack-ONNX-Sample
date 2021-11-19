@@ -31,6 +31,12 @@ cython_bbox 0.1.3 or later<br>
 ```bash
 python demo_video_onnx.py
 ```
+<details>
+<summary>実行時オプション</summary>
+
+
+</details>
+
 * --device<br>
 カメラデバイス番号の指定<br>
 デフォルト：0
@@ -60,16 +66,18 @@ NMSの閾値<br>
 デフォルト：0.6
 
 #### Webカメラ
-XXXX
+```bash
+python demo_webcam_onnx.py
+```
 
 # Reference
-* [RangiLyu/nanodet](https://github.com/RangiLyu/nanodet)
+* [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack)
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
  
 # License 
-NanoDet-ONNX-Sample is under [Apache-2.0 License](LICENSE).
+ByteTrack-ONNX-Sample is under [MIT License](LICENSE).
 
 # License(Movie)
 サンプル動画は[NHKクリエイティブ・ライブラリー](https://www.nhk.or.jp/archives/creative/)の[イギリス ウースターのエルガー像](https://www2.nhk.or.jp/archives/creative/material/view.cgi?m=D0002011239_00000)を使用しています。
