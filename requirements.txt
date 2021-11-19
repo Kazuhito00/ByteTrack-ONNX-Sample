@@ -1,0 +1,12 @@
+opencv-python
+onnx
+onnxruntime-gpu
+Cython
+torch
+torchvision
+pycocotools
+scipy
+loguru
+thop
+lap
+cython_bbox
