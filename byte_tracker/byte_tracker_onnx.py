@@ -94,11 +94,13 @@ class ByteTrackerONNX(object):
 
     def _tracker_update(self, dets, image_info):
         # トラッカー更新
-        online_targets = self.tracker.update(
-            dets[:, :-1],
-            [image_info['height'], image_info['width']],
-            [image_info['height'], image_info['width']],
-        )
+        online_targets = []
+        if dets is not None:
+            online_targets = self.tracker.update(
+                dets[:, :-1],
+                [image_info['height'], image_info['width']],
+                [image_info['height'], image_info['width']],
+            )
 
         online_tlwhs = []
         online_ids = []
