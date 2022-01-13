@@ -49,7 +49,7 @@ ByteTrackのONNXモデル格納パス<br>
 * --score_th<br>
 人検出のスコア閾値<br>
 デフォルト：0.1
-* --score_th<br>
+* --nms_th<br>
 人検出のNMS閾値<br>
 デフォルト：0.7
 * --input_shape<br>
@@ -97,7 +97,7 @@ ByteTrackのONNXモデル格納パス<br>
 * --score_th<br>
 人検出のスコア閾値<br>
 デフォルト：0.1
-* --score_th<br>
+* --nms_th<br>
 人検出のNMS閾値<br>
 デフォルト：0.7
 * --input_shape<br>
