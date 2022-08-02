@@ -1,3 +1,7 @@
+> **Warning**
+> <br>このリポジトリは [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) のモデルファイルを単純にONNXに変換しソースコードを整理したリポジトリです。<br>
+> 特別な理由がない限り、より汎用的な [yolox-bytetrack-sample](https://github.com/Kazuhito00/yolox-bytetrack-sample) や [yolox-bytetrack-mcmot-sample](https://github.com/Kazuhito00/yolox-bytetrack-mcmot-sample) の使用をおすすめします。
+
 # ByteTrack-ONNX-Sample
 [ByteTrack(Multi-Object Tracking by Associating Every Detection Box)](https://github.com/ifzhang/ByteTrack)のPythonでのONNX推論サンプルです。<br>
 ONNXに変換したモデルも同梱しています。<br>
